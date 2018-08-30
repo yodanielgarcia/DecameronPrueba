@@ -31,8 +31,35 @@ CREATE TABLE Hoteles (
   f_creacion timestamp 
 ) 
 
+CREATE TABLE habitacionXtipo (
+  id int  NOT NULL,
+  nombre varchar(255) NOT NULL,
+  idHotel int NOT NULL,  
+  Tipo int NOT NULL
+) 
+
+CREATE TABLE tiposHabi (
+  id int  NOT NULL,
+  nombre varchar(255) NOT NULL,
+  idtipo int NOT NULL
+) 
+
+CREATE TABLE tipoAcomodacion (
+  id int  NOT NULL,
+  nombre varchar(255) NOT NULL,
+) 
+
 INSERT INTO usuarios (id, nombre, identificacion, email, password, remember_token, f_creacion, f_actualizacion, deleted_at, tipo_u, activo_inactivo) VALUES
 (1, 'Daniel', 1515, 'admin@admin.com', '123456', 'hhhhhh', '2018-08-29 16:37:11', '2018-08-29 16:37:11', '2018-08-29 16:37:11', 1, 1);
 
 insert into Hoteles (id,nombre,nit,direccion,ciudad,no_habitaciones,f_creacion) values 
   (1,'Hotel vista linda',123141,'carrera 9 #14-44','cali',22,'2018-08-29 16:37:11');
+  
+insert into tiposHabi (id, nombre, idtipo) values (1,estandar,1);
+insert into tiposHabi (id, nombre, idtipo) values (2,Junior,2);
+insert into tiposHabi (id, nombre, idtipo) values (3,suite,3);
+
+insert into tipoAcomodacion (id, nombre) values (1,sencilla);
+insert into tipoAcomodacion (id, nombre) values (1,doble);
+insert into tipoAcomodacion (id, nombre) values (1,tripel);
+insert into tipoAcomodacion (id, nombre) values (1,cuatruple);
