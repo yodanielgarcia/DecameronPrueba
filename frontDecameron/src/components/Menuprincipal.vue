@@ -49,7 +49,8 @@
                 </div>
             </nav>
             <div>
-                <router-view></router-view>    
+                <router-view></router-view>  
+                <tabla :titulo="mititulo" :prueba="menu">  </tabla>
             </div>
         </div>
     </div>
@@ -57,23 +58,26 @@
  
 </template>
 <script>
+import tabla from '@/components/tabla'
+
 export default {
     name:'menuprincipal',
     data () {
     return {     
         menu:[{
                   path: '#/CrearH',
-                  name: 'Lista',                 
+                  name: 'Crear',                 
                 },
                 {
-                  path: 'create',
-                  name: 'Crear',
-                },
-                {
-                  path: 'edit/:id',
-                  name: 'Editar',
-                }]
-    }
+                  path: '#/listarh',
+                  name: 'Lista',
+                }
+                ],
+                 mititulo:'asdas',
+    }   
+    },
+    components:{
+        tabla
     }
 }
 </script>

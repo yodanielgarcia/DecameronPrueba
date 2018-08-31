@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import menuprincipal from '@/components/MenuPrincipal'
 import login from '@/components/login'
 import CrearH from '@/components/CrearH'
+import listarh from '@/components/listarh'
 
 Vue.use(Router)
 
@@ -32,10 +33,16 @@ export default new Router({
                 name: 'CrearH1',
                 component: { render(c) { return c('router-view') } },
                 children: [{
-                    path: '/CrearH',
-                    name: 'CrearH',
-                    component: CrearH
-                }]
+                        path: '/CrearH',
+                        name: 'CrearH',
+                        component: CrearH
+                    },
+                    {
+                        path: '/listarh',
+                        name: 'listarh',
+                        component: listarh
+                    }
+                ]
             }]
         },
         {

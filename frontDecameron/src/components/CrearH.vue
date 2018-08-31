@@ -56,7 +56,7 @@ export default {
                 var urlLogin = 'http://localhost/Decameronback/ConsultaCrearH.php?id=1&nombre='+this.NombreHotel+'&nit='+this.NitHotel+'&direccion='+this.DireccionHotel+'&ciudad='+this.CiudadHotel+'&no_habitaciones='+this.NumeroHabtaciones;
                 axios.get(urlLogin).then(response => {
                     this.people = response.data;
-                    this.$router.push('/')
+                    this.$router.push('/listarh')
                 });
             } else {
                 alert('Tienes Campos Vacios');
